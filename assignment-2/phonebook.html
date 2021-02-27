@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-2 Phonebook</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var userData = JSON.parse('[{"name":"Adeline Parsons","phone":"+91 (859) 501-2595"},{"name":"Adkins Gallagher","phone":"+91 (881) 533-2498"},{"name":"Amparo Reese","phone":"+91 (981) 521-3853"},{"name":"Angelica Goodwin","phone":"+91 (855) 518-3531"},{"name":"Betty Cooke","phone":"+91 (982) 478-3020"},{"name":"Bettye Simmons","phone":"+91 (824) 551-2487"},{"name":"Blackburn Medina","phone":"+91 (857) 450-2237"},{"name":"Brady Sargent","phone":"+91 (987) 450-3873"},{"name":"Burns Gibson","phone":"+91 (864) 541-3830"},{"name":"Calhoun Bullock","phone":"+91 (930) 550-3408"},{"name":"Chavez Fields","phone":"+91 (972) 514-3082"},{"name":"Cherry Sharp","phone":"+91 (912) 466-3854"},{"name":"Corine Fletcher","phone":"+91 (852) 456-2629"},{"name":"Desiree Crosby","phone":"+91 (959) 578-3424"},{"name":"Dionne Holmes","phone":"+91 (992) 429-2105"},{"name":"Dodson Wynn","phone":"+91 (931) 552-3574"},{"name":"Dudley England","phone":"+91 (990) 554-2791"},{"name":"Edna Mayer","phone":"+91 (986) 430-3869"},{"name":"Elisa Rhodes","phone":"+91 (850) 478-3339"},{"name":"Emma Fisher","phone":"+91 (968) 420-3970"},{"name":"Estella Gonzales","phone":"+91 (860) 469-2668"},{"name":"Ewing Bird","phone":"+91 (858) 448-3508"},{"name":"Fern Patterson","phone":"+91 (995) 453-3049"},{"name":"Figueroa Barr","phone":"+91 (812) 424-2341"},{"name":"Fletcher Aguilar","phone":"+91 (846) 558-3372"},{"name":"Frederick Mooney","phone":"+91 (895) 416-2039"},{"name":"Fuentes Clark","phone":"+91 (872) 466-3474"},{"name":"Good Harvey","phone":"+91 (830) 469-2064"},{"name":"Goodwin Love","phone":"+91 (941) 581-2969"},{"name":"Gwendolyn Baird","phone":"+91 (888) 589-3797"},{"name":"Hart Schmidt","phone":"+91 (962) 574-2625"},{"name":"Hernandez Mejia","phone":"+91 (880) 440-2507"},{"name":"Hicks Crane","phone":"+91 (879) 495-3985"},{"name":"Holloway Gordon","phone":"+91 (925) 514-3751"},{"name":"Howell Middleton","phone":"+91 (812) 529-3051"},{"name":"Humphrey Warren","phone":"+91 (898) 466-2801"},{"name":"Iva Terrell","phone":"+91 (854) 448-3433"},{"name":"Jami Weaver","phone":"+91 (872) 475-2635"},{"name":"Jane Willis","phone":"+91 (851) 407-2435"},{"name":"Janice Hoover","phone":"+91 (947) 553-2135"},{"name":"Janna Hinton","phone":"+91 (865) 407-2774"},{"name":"Jo Anthony","phone":"+91 (985) 573-3632"},{"name":"Kitty Barker","phone":"+91 (922) 433-3912"},{"name":"Lawanda Whitney","phone":"+91 (947) 589-2609"},{"name":"Lesley Fowler","phone":"+91 (874) 522-2133"},{"name":"Lorna Dennis","phone":"+91 (901) 537-3800"},{"name":"Lynnette Brady","phone":"+91 (973) 409-3738"},{"name":"Marta Duncan","phone":"+91 (995) 574-2771"},{"name":"Maxine Salas","phone":"+91 (982) 461-3950"},{"name":"Mcdowell Griffin","phone":"+91 (957) 461-3843"},{"name":"Mclean Hutchinson","phone":"+91 (876) 438-2560"},{"name":"Morgan Boyle","phone":"+91 (823) 597-2424"},{"name":"Olivia Lindsey","phone":"+91 (815) 483-2794"},{"name":"Oneil Nixon","phone":"+91 (927) 553-3278"},{"name":"Phyllis Tanner","phone":"+91 (918) 576-2349"},{"name":"Reilly Poole","phone":"+91 (824) 574-3283"},{"name":"Rhodes Boone","phone":"+91 (880) 401-2545"},{"name":"Rodriquez Welch","phone":"+91 (875) 568-2090"},{"name":"Rogers Payne","phone":"+91 (801) 487-2714"},{"name":"Shanna Hernandez","phone":"+91 (915) 444-3012"},{"name":"Sosa Randall","phone":"+91 (996) 465-3268"},{"name":"Spencer Doyle","phone":"+91 (807) 523-2496"},{"name":"Terry Cochran","phone":"+91 (834) 555-2294"},{"name":"Todd Valenzuela","phone":"+91 (850) 538-2680"},{"name":"Trujillo Molina","phone":"+91 (908) 448-2717"},{"name":"Tucker Berry","phone":"+91 (909) 518-2034"},{"name":"Valdez Sullivan","phone":"+91 (919) 480-3554"},{"name":"Washin Jennings","phone":"+91 (902) 594-2234"},{"name":"Yang Malone","phone":"+91 (985) 426-2148"},{"name":"Yvonne Valencia","phone":"+91 (860) 491-2176"}]');
+        var bgcolors = ['color1', 'color2', 'color3', 'color4'];
+
+        $(document).ready(() => {
+            let i=0;
+            let firstInitial="";
+            userData.forEach(d=>{
+                let alphAToShow="";
+
+                if(d.name[0]!==firstInitial){
+                    $('.contactRow').append('<div class="startAlpha">'+d.name[0]+'</div><div class="infoWrapper"><span class="nameAlpha '+bgcolors[i%4]+'">A</span><div class="infoBox"><span class="name">'+d.name+'</span><br><span class="number">'+d.phone+'</span></div><span class="dial"><img width="24px" style="float: right;" src="phone-solid.svg" alt="dialicon"></span></div>');
+                    firstInitial=d.name[0];
+                }
+                else{
+                    $('.contactRow').append('<div class="infoWrapper"><span class="nameAlpha '+bgcolors[i%4]+'">A</span><div class="infoBox"><span class="name">'+d.name+'</span><br><span class="number">'+d.phone+'</span></div><span class="dial"><img width="24px" style="float: right;" src="phone-solid.svg" alt="dialicon"></span></div>');
+                }
+
+                ++i;
+            })
+        })
+    </script>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .contactRow {
+            margin-top: 8px;
+            padding: 2px;
+        }
+
+        .startAlpha {
+            display: block;;
+            height: 30px;
+            width: 30px;
+            font-size: 28px;
+            color: #023047;
+            margin-right: 20px;
+            position: sticky;
+            top: -1px;
+            background-color: #fff;
+        }
+
+        .nameAlpha {
+            display: inline-block;
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 32px;
+            font-weight: lighter !important;
+            color: #fff !important;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            background-color: #d73d33;
+            border-radius: 50px;
+            position: relative;
+        }
+
+        .name {
+            font-size: 18px;
+        }
+
+        .number {
+            font-size: 14px;
+            position: relative;
+            bottom: 2px;
+        }
+
+        .infoBox {
+            display: inline-block;
+            padding-left: 16px;
+            position: relative;
+            top: 7px;
+        }
+
+        .infoWrapper {
+            display: inline-block;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-bottom: 4px;
+            width: 83%;
+            position: relative;
+            left: 12%;
+        }
+
+        .infoWrapper:hover {
+            background-color: #dedddc;
+        }
+
+        .dial {
+            position: relative;
+            top: 16px;
+        }
+
+        .color1 {
+            background-color: #b82116;
+        }
+
+        .color2 {
+            background-color: #0ead30;
+        }
+
+        .color3 {
+            background-color: #1d3285;
+        }
+
+        .color4 {
+            background-color: #7a1d63;
+        }
+
+        .dial img {
+            color: #312f2f;
+        }
+
+        .stickyDiv {
+            width: 10%;
+            float: left;
+        }
+
+        .contactDiv {
+            /* width: 80%; */
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center p-3 text-white bg-info">
+                <h3>Phonebook</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 main" style="padding-top: 20px">
+               
+                <div class="contactRow">
+                    <!-- <div class="startAlpha">A</div>
+
+
+                    <div class="infoWrapper">
+                        <span class="nameAlpha">A</span>
+                        <div class="infoBox">
+                            <span class="name">Anil Kumar</span><br>
+                            <span class="number">123457890</span>
+                        </div>
+                        <span class="dial">
+                            <img width="24px" style="float: right;" src="phone-solid.svg" alt="dialicon">
+                        </span>
+
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</body>
+
+</html>
