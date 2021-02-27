@@ -21,11 +21,11 @@
                 let alphAToShow="";
 
                 if(d.name[0]!==firstInitial){
-                    $('.contactRow').append('<div class="startAlpha">'+d.name[0]+'</div><div class="infoWrapper"><span class="nameAlpha '+bgcolors[i%4]+'">A</span><div class="infoBox"><span class="name">'+d.name+'</span><br><span class="number">'+d.phone+'</span></div><span class="dial"><img width="24px" style="float: right;" src="phone-solid.svg" alt="dialicon"></span></div>');
+                    $('.contactRow').append('<div class="startAlpha">'+d.name[0]+'</div><div class="infoWrapper"><span class="nameAlpha '+bgcolors[i%4]+'">'+d.name[0]+'</span><div class="infoBox"><span class="name">'+d.name+'</span><br><span class="number">'+d.phone+'</span></div><span class="dial"><img width="24px" style="float: right;" src="phone-solid.svg" alt="dialicon"></span></div>');
                     firstInitial=d.name[0];
                 }
                 else{
-                    $('.contactRow').append('<div class="infoWrapper"><span class="nameAlpha '+bgcolors[i%4]+'">A</span><div class="infoBox"><span class="name">'+d.name+'</span><br><span class="number">'+d.phone+'</span></div><span class="dial"><img width="24px" style="float: right;" src="phone-solid.svg" alt="dialicon"></span></div>');
+                    $('.contactRow').append('<div class="infoWrapper"><span class="nameAlpha '+bgcolors[i%4]+'">'+d.name[0]+'</span><div class="infoBox"><span class="name">'+d.name+'</span><br><span class="number">'+d.phone+'</span></div><span class="dial"><img width="24px" style="float: right;" src="phone-solid.svg" alt="dialicon"></span></div>');
                 }
 
                 ++i;
