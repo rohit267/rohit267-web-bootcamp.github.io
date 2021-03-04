@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background: rgb(34, 34, 44);
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.container div button{
+    font-size: 18px;
+    background:rgb(34, 34, 44);
+    border: 2px solid  aqua;
+    height: 40px;
+    width: 120px;
+    color: aqua;
+    margin-top: 45vh;
+    transition: ease all 0.4s;
+    border-radius: 3px;
+}
+.container div button:hover{
+    transform: translateY(-8px);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 0px rgb(34, 34, 44),
+    0px 2px 0px rgb(22, 45, 46),
+    0px 3px 0px rgb(29, 60, 61),
+    0px 4px 0px rgb(41, 85, 87),
+    0px 5px 0px rgb(60, 125, 128),
+    0px 6px 0px rgb(78, 159, 163),
+    0px 7px 8px aqua;
+
+}
