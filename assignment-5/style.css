@@ -21,6 +21,9 @@ nav div ul li{
     display: inline;
     padding: 0 16px;
 }
+nav div ul li:hover{
+   cursor: pointer;
+}
 p{
     font-size: .9rem;
     color: rgb(128, 128, 128);
@@ -38,6 +41,18 @@ p{
 .mainImg img{
     margin: 0 auto;
     width: 120%;
+}
+
+.social span {
+ margin: 0 8px;
+ cursor: pointer;
+}
+
+.social a:active{
+    color: rgb(128, 128, 128);;
+}
+.social a:visited{
+    color: rgb(128, 128, 128);
 }
 
 @media only screen and (max-width: 576px){
