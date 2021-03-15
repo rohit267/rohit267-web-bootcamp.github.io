@@ -1,0 +1,48 @@
+body{
+    background-color: #e5e5e5;
+    font-family: 'Rubik', sans-serif;
+    height: 100vh;
+}
+
+.mColor{
+    color: #0077b6;
+}
+
+nav{
+    margin-top: 24px;
+}
+
+li{
+    list-style-type: none;
+}
+
+nav div ul li{
+    list-style-type: none;
+    display: inline;
+    padding: 0 16px;
+}
+p{
+    font-size: .9rem;
+    color: rgb(128, 128, 128);
+}
+
+.ab{
+    
+    margin-top: 8vh;
+    
+    /* font-weight: lighter; */
+}
+.mainImg{
+    width: 100%;
+}
+.mainImg img{
+    margin: 0 auto;
+    width: 120%;
+}
+
+@media only screen and (max-width: 576px){
+    .mainImg img{
+       
+        width: 100%;
+    }
+}
