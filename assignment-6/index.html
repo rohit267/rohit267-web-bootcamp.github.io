@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List :: Assignment 6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center p-3 text-white bg-info">
+                <h3>TODO List</h3>
+            </div>
+        </div>
+        <div class="row mt-4">
+
+            <div class="col-md-8">
+                <div class="form-group">
+                    <input type="text" name="todoText" id="todoText" class="form-control" placeholder="Enter new todo">
+                    <div class="text-center">
+                        <button class="btn btn-info mt-1 btnSave"><i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
+                    </div>
+                    
+
+                    <div class="row">
+                        <div class="col-md-12 mainTodos">
+                            <div class="text-center">
+                                <h3>TODOs</h3>
+                            </div>
+                            <div>
+                                <ul class="todoS">
+                                   
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 history">
+                <div class="text-center">
+                    <h3>History</h3>
+                </div>
+                <ul class="todoH">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

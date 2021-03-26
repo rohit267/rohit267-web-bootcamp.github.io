@@ -1,0 +1,35 @@
+body{
+    font-family: 'Rubik', sans-serif;
+}
+
+
+.mainTodos ,.history{
+    margin-top: 8px;
+    border: 1px solid skyblue;
+    border-radius: 8px;
+}
+
+.todoS li span {
+    margin-left: 8px;
+    margin-right: 8px;
+    float: right;
+}
+
+.todoS li{
+    list-style: square;
+    margin: 8px;
+}
+
+
+.cBtn{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.textValue{
+    float: left !important;
+}
+
+li{
+    transition: ease-in-out 1s all;
+}
